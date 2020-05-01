@@ -104,22 +104,26 @@ const Forms = props => {
 				{serverError ? <p className="error">{serverError}</p> : null}
 				<label htmlFor="name">
 					Name
+					<br />
 					<input
 						id="name"
 						type="text"
 						name="name"
 						onChange={inputChange}
 						value={formState.name}
+						data-cy="name"
 					/>
 					{errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
 				</label>
 				<label htmlFor="email">
 					Email
+					<br />
 	        <input
 	          type="text"
 	          name="email"
 	          onChange={inputChange}
 	          value={formState.email}
+	          data-cy="email"
 	        />
 	        {errors.email.length > 0 ? (
 	          <p className="error">{errors.email}</p>
@@ -127,26 +131,31 @@ const Forms = props => {
 				</label>
 				<label htmlFor="password">
 					Password
+					<br />
 					<input
 						type="text"
 						name="password"
 						onChange={inputChange}
 						value={formState.password}
+						data-cy="password"
 					/>
 					{errors.password.length > 0 ? (
 						<p className="error">{errors.password}</p>) : null}
 				</label>
 				<label htmlFor="confirmPassword">
 					Confirm Password
+					<br />
 					<input
 						type="text"
 						name="confirmPassword"
 						onChange={inputChange}
 						value={formState.confirmPassword}
+						data-cy="confirmPassword"
 					/>
 				</label>
 				<label htmlFor="quirks">
 	        What is your quirks
+	        <br />
 	        <select id="quirks" name="quirks" onChange={inputChange}>
 	          <option value="">--Please choose an option--</option>
 	          <option value="SuperSTR">Super Stength</option>
@@ -160,12 +169,14 @@ const Forms = props => {
 	          <p className="error">{errors.quirks}</p>
 	        ) : null}
 	      </label>
-	      <label htmlFor="reasons">
+	      <label htmlFor="reasons" className="card-text">
 	        Why would you like to join us?
+	        <br />
 	        <textarea
 	          name="reasons"
 	          onChange={inputChange}
 	          value={formState.reasons}
+	          data-cy="reasons"
 	        />
 	        {errors.reasons.length > 0 ? (
 	          <p className="error">{errors.reasons}</p>
@@ -181,7 +192,7 @@ const Forms = props => {
 	        Terms & Conditions
 	      </label>
 	      <pre>{JSON.stringify(post, null, 2)}</pre>
-	      <button disabled={isButtonDisabled} type="submit">
+	      <button disabled={isButtonDisabled} type="submit" className="btn btn-primary">
 	        Submit
 	      </button>
 			</form>
